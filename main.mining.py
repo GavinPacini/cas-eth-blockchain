@@ -80,7 +80,6 @@ class Blockchain(object):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-
     pp = pprint.PrettyPrinter(indent=4)
 
     blockchain = Blockchain()
@@ -101,4 +100,3 @@ if __name__ == '__main__':
 
     print("Full Blockchain:")
     pp.pprint(blockchain.chain)
-
