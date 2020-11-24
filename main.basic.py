@@ -1,8 +1,3 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
 import hashlib
 import json
 import pprint
@@ -15,14 +10,14 @@ class Blockchain(object):
         self.chain = []
         self.pending_transactions = []
 
-        self.new_block(previous_hash="A blockchain made for ETH's CAS in Applied Information Technology", proof=100)
+        self.new_block(previous_hash="A blockchain made for ETHZ's CAS in Applied Information Technology", nonce=100)
 
-    def new_block(self, proof, previous_hash=None):
+    def new_block(self, nonce, previous_hash=None):
         block = {
             'index': len(self.chain) + 1,
             'timestamp': ctime(time()),
             'transactions': self.pending_transactions,
-            'proof': proof,
+            'nonce': nonce,
             'previous_hash': previous_hash or self.hash(self.chain[-1])
         }
 
@@ -58,11 +53,15 @@ class Blockchain(object):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    # Setup a "pretty printer" to make our outputs easier to read
     pp = pprint.PrettyPrinter(indent=4)
 
+    # Create an instance of our blockchain
     blockchain = Blockchain()
+    # Add some transactions
     t1 = blockchain.new_transaction("Gavin", "Gino", '10 BTC')
     t2 = blockchain.new_transaction("Gavin", "Manu", '20 BTC')
+    # Wait, then generate a new block
     sleep(5)
     blockchain.new_block(12345)
 
@@ -71,5 +70,6 @@ if __name__ == '__main__':
     sleep(5)
     blockchain.new_block(6789)
 
-    print("Blockchain:")
+    # Print our complete blockchain
+    print("Full Blockchain:")
     pp.pprint(blockchain.chain)
