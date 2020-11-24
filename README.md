@@ -1,4 +1,4 @@
-# ETH CAS in Applied Information Technology - Module: Applied Information Technology
+# ETH Zürich CAS in Applied Information Technology - Module: Applied Information Technology
 
 1. Create a new PyCharm project with the following options:
     - python-3
