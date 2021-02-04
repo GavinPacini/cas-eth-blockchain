@@ -5,6 +5,8 @@ Note: This project of course does not include any of the more complex parts of a
 E.g. Asymmetric encryption, consensus algorithms or distributed networking, and much more.
 Instead it serves to teach about the basic data structure that is a blockchain, and the concept of "mining". 
 
+This was used as part of guest lecture I gave to:
+
 ## ETH Zürich CAS in Applied Information Technology - Module: Applied Information Technology
 
 1. Create a new PyCharm project with the following options:
